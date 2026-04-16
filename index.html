@@ -31,6 +31,17 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans','Noto Serif 
 .hero-meta-item .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
 .hero-meta-item .value{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);margin-top:4px;}
 
+/* TOP NAV */
+.top-nav{background:#111;border-bottom:1px solid rgba(255,255,255,.08);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:44px;}
+.top-nav .nav-logo{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,.5);letter-spacing:1px;}
+.top-nav .nav-links{display:flex;gap:4px;}
+.nav-link{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:2px;font-size:12px;letter-spacing:.5px;text-decoration:none;color:rgba(255,255,255,.6);transition:background .2s,color .2s;}
+.nav-link:hover{background:rgba(255,255,255,.08);color:#fff;}
+.nav-link.active-page{background:rgba(192,57,43,.25);color:#ff8c6a;border:1px solid rgba(192,57,43,.4);}
+.nav-link.michelin-link{background:rgba(232,64,26,.15);color:#ff8c6a;border:1px solid rgba(232,64,26,.35);}
+.nav-link.michelin-link:hover{background:rgba(232,64,26,.3);color:#fff;}
+@media(max-width:640px){.top-nav{padding:0 16px;}.nav-link{padding:6px 10px;font-size:11px;}}
+
 /* WEATHER */
 .weather-bar{background:linear-gradient(135deg,var(--red) 0%,#922B21 100%);color:#fff;padding:14px 40px;display:flex;align-items:center;justify-content:center;gap:32px;font-size:13px;}
 .weather-bar span{display:flex;align-items:center;gap:8px;}
@@ -104,6 +115,23 @@ a.tl-card:hover .map-open-hint{opacity:1;}
 .tip{margin-top:10px;padding:8px 12px;background:var(--paper-warm);border-left:2px solid var(--gold);font-size:12px;color:var(--ink-mid);line-height:1.6;}
 .tip strong{color:var(--gold);font-size:11px;letter-spacing:1px;text-transform:uppercase;}
 
+/* MICHELIN BANNER */
+.michelin-banner{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  background:linear-gradient(135deg,#1a0e0b 0%,#2a1510 100%);
+  border:1px solid rgba(232,64,26,.3);border-radius:3px;
+  padding:24px 32px;margin-top:48px;}
+.michelin-banner-left{display:flex;align-items:center;gap:16px;}
+.michelin-bib-icon{font-size:40px;flex-shrink:0;}
+.michelin-banner h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:#fff;margin-bottom:4px;}
+.michelin-banner p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;}
+.michelin-banner p strong{color:#ff8c6a;}
+.michelin-banner-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;
+  background:#E8401A;color:#fff;padding:12px 24px;border-radius:2px;
+  font-size:13px;letter-spacing:.5px;text-decoration:none;font-weight:500;
+  transition:background .2s,transform .15s;white-space:nowrap;}
+.michelin-banner-btn:hover{background:#c0330f;transform:translateY(-1px);}
+@media(max-width:640px){.michelin-banner{flex-direction:column;padding:20px;}.michelin-banner-btn{width:100%;justify-content:center;}}
+
 footer{border-top:1px solid var(--border);padding:32px 40px;text-align:center;font-size:12px;color:var(--ink-light);}
 
 @media(max-width:640px){
@@ -117,6 +145,14 @@ footer{border-top:1px solid var(--border);padding:32px 40px;text-align:center;fo
 <body>
 
 <div id="map-tooltip"><small>클릭하면 Google Maps 열림</small></div>
+
+<nav class="top-nav">
+  <span class="nav-logo">🇹🇼 Taichung 2026</span>
+  <div class="nav-links">
+    <a class="nav-link active-page" href="index.html">🗓 여행 일정표</a>
+    <a class="nav-link michelin-link" href="bib.html">😋 미슐랭 빕구르망</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <header class="hero">
@@ -332,6 +368,20 @@ footer{border-top:1px solid var(--border);padding:32px 40px;text-align:center;fo
       <div class="spot-cat">🛒 현지인 아침 · 로컬 먹거리</div>
       <div class="spot-rating">★ 4.2 · 中區</div>
       <div class="spot-map-hint">↗ Google Maps에서 열기</div>
+    </a>
+  </div>
+
+  <!-- ── 미슐랭 빕구르망 배너 ── -->
+  <div class="michelin-banner">
+    <div class="michelin-banner-left">
+      <div class="michelin-bib-icon">😋</div>
+      <div>
+        <h3>타이중 미슐랭 빕구르망 가이드</h3>
+        <p>합리적인 가격에 훌륭한 요리 · <strong>2025 미슐랭 가이드 타이완</strong> 선정 타이중 레스토랑 <strong>23곳</strong><br>메뉴, 위치, 영업시간 등 상세 정보를 확인하세요.</p>
+      </div>
+    </div>
+    <a class="michelin-banner-btn" href="taichung_michelin_bib.html">
+      🍽 빕구르망 가이드 보기 →
     </a>
   </div>
 
