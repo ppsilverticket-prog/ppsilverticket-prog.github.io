@@ -137,8 +137,17 @@ footer{border-top:1px solid var(--border);padding:32px 40px;text-align:center;fo
 @media(max-width:640px){
   .hero{padding:40px 20px 36px;} .hero-meta{gap:20px;}
   .weather-bar{flex-wrap:wrap;gap:12px;padding:12px 20px;}
-  .container{padding:0 16px 60px;} .day-tab{padding:10px 14px;}
+  .container{padding:0 16px 60px;} .day-tab{padding:10px 14px;flex-shrink:0;}
   .day-tab .day-num{font-size:15px;} footer{padding:24px 16px;}
+  .day-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .day-tabs::-webkit-scrollbar{display:none;}
+  .map-open-hint{opacity:.85;}
+  .spot-map-hint{opacity:.85;}
+}
+@media(max-width:480px){
+  .top-nav .nav-logo{display:none;}
+  .top-nav .nav-links{flex:1;}
+  .nav-link{flex:1;justify-content:center;padding:11px 4px;font-size:9.5px;letter-spacing:0;gap:2px;white-space:nowrap;}
 }
 </style>
 </head>

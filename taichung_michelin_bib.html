@@ -45,6 +45,14 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans','Noto Serif 
 /* CONTAINER */
 .container{max-width:1100px;margin:0 auto;padding:0 24px 80px;}
 @media(max-width:640px){.container{padding:0 16px 60px;}}
+@media(max-width:480px){
+  .nav-logo{display:none;}
+  .nav-links{flex:1;}
+  .nav-link{flex:1;justify-content:center;padding:11px 4px;font-size:9.5px;letter-spacing:0;gap:2px;white-space:nowrap;}
+  .filter-label{width:100%;}
+  .filter-btn{padding:6px 12px;}
+  .rest-grid{grid-template-columns:1fr;}
+}
 
 /* BIB EXPLAIN */
 .bib-explain{display:flex;align-items:flex-start;gap:16px;background:var(--bib-pale);border-left:4px solid var(--bib);padding:20px 24px;margin:40px 0 0;border-radius:0 3px 3px 0;}
